@@ -1,0 +1,16 @@
+# Ansible managed
+
+[global]
+{% for key, value in samba_global_config.items() %}
+{{ key | replace('_', ' ') }} = {{ value }}
+{% endfor %}
+
+{% for share in samba_shares %}
+[{{ share.name }}]
+{% for key, value in share.items() %}
+{% if key != 'name' %}
+{{ key | replace('_', ' ') }} = {{ value }}
+{% endif %}
+{% endfor %}
+
+{% endfor %}

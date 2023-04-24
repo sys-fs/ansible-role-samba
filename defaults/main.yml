@@ -1,0 +1,7 @@
+---
+# defaults file for sys-fs.samba
+samba_packages:
+  - samba
+
+samba_global_config: {}
+samba_shares: []

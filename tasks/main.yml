@@ -1,0 +1,12 @@
+---
+# tasks file for sys-fs.samba
+- name: Install Samba
+  apt:
+    name: '{{ samba_packages }}'
+
+- name: Configure Samba
+  template:
+    src: samba.conf.j2
+    dest: /etc/samba/smb.conf
+    validate: 'testparm -s %s'
+  notify: Restart Samba

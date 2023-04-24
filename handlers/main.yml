@@ -1,0 +1,6 @@
+---
+# handlers file for sys-fs.samba
+- name: Restart Samba
+  service:
+    name: smbd
+    state: restarted
