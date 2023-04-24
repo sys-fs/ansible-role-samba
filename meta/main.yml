@@ -9,7 +9,11 @@ galaxy_info:
   platforms:
     - name: Debian
       versions:
-        - all
+        - jessie
+        - stretch
+        - buster
+        - bullseye
+        - bookworm
 
   galaxy_tags:
     - debian
